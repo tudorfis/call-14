@@ -1,0 +1,29 @@
+@import url("./_vendors.css");
+@import url("./_modals.css");
+
+* {
+    --brand-color: rgb(38, 130, 236);
+}
+
+html, body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #333;
+    color: #fff;    
+}
+
+button {
+    color: #333;
+}
+.box {
+    color: white;
+    background-color: var(--brand-color);
+    margin: 10vmin;
+}
+.title {
+    color: white;
+}
+.hide {
+    display: none;
+}
+

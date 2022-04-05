@@ -1,0 +1,15 @@
+
+<article class="user-card">
+    <img ref="image" />
+    <div>
+        <h1 ref="title"></h1>
+        <div ref="info" class="info">
+            <p><strong>EMAIL:</strong> <slot name="email" /></p>
+            <p><strong>PHONE:</strong> <slot name="phone" /></p>
+        </div>
+        <button 
+            ref="toggle-btn"
+            click="toggleInfo"
+        ></button>
+    </div>
+</article>

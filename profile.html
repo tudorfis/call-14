@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Catalog Digital Online</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/profile.js" type="module"></script>
+</head>
+<body>
+    <h1>profile</h1>
+    <app-counter></app-counter>
+    <user-card
+        id="userCard1"
+        name="Tudor"
+        avatar="https://randomuser.me/api/portraits/men/1.jpg"
+    >
+       <div slot="email">todorescu.consulting@gmail.com</div> 
+       <div slot="phone">112</div> 
+    </user-card>
+
+    <user-card
+        name="Alina"
+        avatar="https://randomuser.me/api/portraits/women/1.jpg"
+    >
+        <div slot="email">alina@gmail.com</div> 
+        <div slot="phone">911</div> 
+    </user-card>
+
+    <script>
+        const userCard1 = document.getElementById( 'userCard1' )
+        
+        addEventListener( 'DOMContentLoaded', _ => {
+            userCard1.loaded.then( element => {
+                userCard1.shadowRoot.querySelector( 'img' )
+            })
+        })
+    </script>
+</body>
+</html>
