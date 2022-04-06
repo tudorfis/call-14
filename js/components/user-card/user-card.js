@@ -1,34 +1,33 @@
-import Component from '../Component.js'
+
+import WebComponent from '../WebComponent.js'
 
 const props = [
     'name',
     'avatar'
 ]
-export default class extends Component {
-    showInfo = true
 
+const data = {
+    'showInfo': true
+}
+
+export default class extends WebComponent {
     constructor() {
-        super({ componentUrl: import.meta.url, props })
+        super({ 
+            componentUrl: import.meta.url,
+            props,
+            data
+        })
     }
     static get observedAttributes() {
         return [ ...props ]
-    }
-    afterRender() {
-        this.propsUpdate()
-        this.toggleInfoUpdates()
-    }
-    toggleInfoUpdates() {
-        this.refs[ 'info' ].style.display = this.showInfo ? 'block' : 'none'
-        this.refs[ 'toggle-btn' ].innerText = this.showInfo ? 'Hide info' : 'Show info'
-    }
-    toggleInfo() {
-        this.showInfo = !this.showInfo
-        this.toggleInfoUpdates()
-    }
+    } 
     nameUpdate( value ) {
-        this.refs[ 'title' ].innerText = value
+        this.refs.title.innerText = value
     }
     avatarUpdate( value ) {
-        this.refs[ 'image' ].setAttribute( 'src', value )
+        this.refs.image.setAttribute( 'src', value )
+    }
+    toggleInfo() {
+        this.data.showInfo = !this.data.showInfo
     }
 }

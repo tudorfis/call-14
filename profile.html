@@ -29,12 +29,11 @@
     </user-card>
 
     <script>
-        const userCard1 = document.getElementById( 'userCard1' )
-        
-        addEventListener( 'DOMContentLoaded', _ => {
-            userCard1.loaded.then( element => {
-                userCard1.shadowRoot.querySelector( 'img' )
-            })
+        const userCard1 = document.querySelector( '#userCard1' )
+
+        addEventListener( 'load', async _ => {
+            await userCard1.loaded
+            userCard1.shadowRoot.querySelector( 'img' )
         })
     </script>
 </body>

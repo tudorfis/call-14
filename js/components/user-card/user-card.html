@@ -1,15 +1,17 @@
-
 <article class="user-card">
     <img ref="image" />
-    <div>
+    <div class="title">
         <h1 ref="title"></h1>
-        <div ref="info" class="info">
+        <div class="info" show="showInfo">
             <p><strong>EMAIL:</strong> <slot name="email" /></p>
             <p><strong>PHONE:</strong> <slot name="phone" /></p>
         </div>
         <button 
-            ref="toggle-btn"
+            ref="toggle"
             click="toggleInfo"
-        ></button>
+        >
+            <span hide="showInfo">Show info</span>
+            <span show="showInfo">Hide info</span>
+        </button>
     </div>
 </article>

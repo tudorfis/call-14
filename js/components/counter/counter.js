@@ -1,7 +1,7 @@
 
-import Component from '../Component.js'
+import WebComponent from '../WebComponent.js'
 
-export default class extends Component {
+export default class extends WebComponent {
     constructor() {
         super({ templateContent: '<h3>counter</h3>' })
     }
